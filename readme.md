@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rdok/eso-pomodoro.svg?branch=master)](https://travis-ci.org/rdok/eso-pomodoro)
+
 ## Dev
 
 ### Link src to system
