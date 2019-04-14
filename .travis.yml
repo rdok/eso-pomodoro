@@ -5,4 +5,4 @@ services:
 before_install:
   - docker build --tag=luaunit:5.1 tests
 
-script: docker run --r --user $UID:$UID --volume $(pwd):/app --workdir /app luaunit:5.1 lua tests/TestSuite.lua
+script: docker run --rm --user $UID:$UID --volume $(pwd):/app --workdir /app luaunit:5.1 lua tests/TestSuite.lua
