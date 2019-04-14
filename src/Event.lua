@@ -1,4 +1,4 @@
-Event = {}
+local Event = {}
 
 function Event:initialize(addonName)
     EVENT_MANAGER:RegisterForEvent(addonName, EVENT_ZONE_CHANGED, Event.dispatch)
@@ -10,4 +10,3 @@ function Event:dispatch()
 end
 
 return Event
-

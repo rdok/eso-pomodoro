@@ -16,5 +16,7 @@ if [ "local" == ${APP_ENV} ] && [ ! -f ${esouiSdk} ]; then
     --silent
 fi
 
+clear
+
 exec lua /app/tests/TestSuite.lua -v "$@"
 
