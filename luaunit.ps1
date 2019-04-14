@@ -8,21 +8,21 @@
 
 $luaContainer = "luaunit:5.1"
 
-$luanitInspection = Invoke-Expression "docker image inspect $luaunitTag 2>&1"
+#$luanitInspection = Invoke-Expression "docker image inspect $luaunitTag 2>&1"
 
-If ($luanitInspection -like "*No such image: $luaunitTag*")
-{
-    # Should reflect .travis.yml
-    Invoke-Expression "docker build --tag=$luaContainer .\tests\"
-}
+$arguments = $args | Out-String
+
+#If ($arguments -like "*--build*")
+#{
+#    $arguments = $arguments.Replace("--build", "")
+#    Invoke-Expression "docker build --tag=$luaContainer ."
+#}
 
 # Should reflect .travis.yml
 $dockerRun = "docker run --rm " `
-        + "--user root " `
-        + "--volume $( pwd ):/app " `
-        + "--workdir /app " `
-        + "$luaContainer lua tests/TestSuite.lua $args"
-
-Write-Output $dockerRun
+              + "--user root " `
+              + "--volume $( pwd ):/app " `
+              + "--workdir /app " `
+              + "$luaContainer lua tests/TestSuite.lua $arguments"
 
 Invoke-Expression $dockerRun

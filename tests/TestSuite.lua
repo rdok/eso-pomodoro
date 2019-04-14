@@ -2,6 +2,6 @@
 
 lu = require 'luaunit'
 
-TestDemoTwo = require 'src.DemoTwoTest'
+TestEvent = require 'src.EventTest'
 
 os.exit(lu.LuaUnit.run('--pattern', 'Test'))
