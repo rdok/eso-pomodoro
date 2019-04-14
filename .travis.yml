@@ -4,7 +4,4 @@ services:
 before_install:
   - docker build --tag=luaunit:5.1 tests
 
-script:
-  - pwd
-  - ls
-  - bash luaunit.sh
+script: ./tests/luaunit.sh
