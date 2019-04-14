@@ -5,5 +5,7 @@ before_install:
   - docker build --tag=luaunit:5.1 tests
 
 script:
-  - ls -lat
+  - ls -lat tests
+  - chmod +x tests/luaunit.sh
+  - ls -lat tests
   - ./tests/luaunit.sh
