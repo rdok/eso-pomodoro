@@ -14,5 +14,3 @@ end
 function EVENT_MANAGER:GetRegisteredEvents()
     return registeredEvents
 end
-
-return EVENT_MANAGER
