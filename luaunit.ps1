@@ -12,9 +12,11 @@ $luanitInspection = Invoke-Expression "docker image inspect $luaunitTag 2>&1"
 
 If ($luanitInspection -like "*No such image: $luaunitTag*")
 {
+    # Should reflect .travis.yml
     Invoke-Expression "docker build --tag=$luaContainer .\tests\"
 }
 
+# Should reflect .travis.yml
 $dockerRun = "docker run --rm " `
         + "--user root " `
         + "--volume $( pwd ):/app " `

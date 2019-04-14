@@ -1,11 +1,8 @@
 services:
   - docker
 
+# The following code should reflect the one from luaunit.ps1
 before_install:
   - docker build --tag=luaunit:5.1 tests
 
-script:
-  - ls -lat tests
-  - chmod +x tests/luaunit.sh
-  - ls -lat tests
-  - ./tests/luaunit.sh
+script: docker run --r --user $UID:$UID --volume $(pwd):/app --workdir /app luaunit:5.1 lua tests/TestSuite.lua
