@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 docker run --rm                     \
-    --user $UID:$GID                \
+    --user $UID:$UID                \
     --volume $(pwd):/app            \
     --workdir /app                  \
     luaunit:5.1                     \
