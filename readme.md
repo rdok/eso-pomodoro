@@ -4,7 +4,7 @@
 
 ### IDE
 - Copy .env.example to .env
-- Build image: docker-composer build
+- Build image: docker-compose build
 - Execute tests: docker-compose run luaunit -v
 - At this stage the entry-point.sh will have downloaded the esoui sdk zip. Load it as a library for a bit of autocomplete.
 

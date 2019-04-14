@@ -2,6 +2,6 @@ services:
   - docker
 
 before_install:
-  - docker-composer build
+  - docker-compose build
 
 script: docker-compose run luaunit -v
