@@ -5,4 +5,4 @@ docker run --rm                     \
     --volume $(pwd):/app            \
     --workdir /app                  \
     luaunit:5.1                     \
-    lua TestSuite.lua
+    lua tests/TestSuite.lua
