@@ -16,10 +16,10 @@ If ($luanitInspection -like "*No such image: $luaunitTag*")
 }
 
 $dockerRun = "docker run --rm " `
-       + "--user root " `
-       + "--volume $( pwd ):/app " `
-       + "--workdir /app " `
-       + "$luaContainer lua tests/TestSuite.lua $args"
+        + "--user root " `
+        + "--volume $( pwd ):/app " `
+        + "--workdir /app " `
+        + "$luaContainer lua tests/TestSuite.lua $args"
 
 Write-Output $dockerRun
 
