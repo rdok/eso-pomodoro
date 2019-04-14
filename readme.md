@@ -2,6 +2,13 @@
 
 ## Dev
 
+### IDE
+- Copy .env.example to .env
+- Build image: docker-composer build
+- Execute tests: docker-compose run luaunit -v
+- At this stage the entry-point.sh will have downloaded the esoui sdk zip. Load it as a library for a bit of autocomplete.
+
+
 ### Link src to system
 Storing source inside the system feels like coding on production server :mind_blown: Let's fix that by creating a symbolic link from the source code to system:
 - Open `cmd` with Admin privileges
