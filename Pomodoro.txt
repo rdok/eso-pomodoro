@@ -6,6 +6,7 @@
 
 src/Initialize.lua
 src/CapsLocker.lua
+src/Event.lua
 src/RegisterAddon.lua
 # src/UI.xml
 
