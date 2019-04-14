@@ -4,4 +4,6 @@ services:
 before_install:
   - docker-compose build
 
-script: docker-compose run luaunit -v
+script:
+  - sudo chmod +x docker/entry-point.sh
+  - docker-compose run luaunit -v
