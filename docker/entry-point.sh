@@ -18,5 +18,5 @@ fi
 
 clear
 
-exec lua /app/tests/TestSuite.lua -v "$@"
+exec lua "$@" -v
 
