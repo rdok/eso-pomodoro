@@ -7,6 +7,7 @@ RUN apk add lua5.1 curl
 #    --output /lib3/luaunit.lua                                                                           \
 #    --silent
 
+
 ENV LUA_PATH "/app/lib/?.lua"
 ENV LUA_PATH "/app/src/?.lua;$LUA_PATH"
 ENV LUA_PATH "/app/tests/?.lua;$LUA_PATH"
