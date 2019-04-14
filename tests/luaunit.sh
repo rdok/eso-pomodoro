@@ -2,7 +2,7 @@
 
 docker run --rm                     \
     --user root                     \
-    --volume D:\Code\Pomodoro:/app  \
+    --volume $(pwd):/app  \
     --workdir /app                  \
     luaunit:5.1                     \
-    lua tests/TestSuite.lua
+    lua TestSuite.lua
