@@ -1,6 +1,7 @@
 version: '3'
 services:
   luaunit:
+    user: root
     build:
       context: ./docker
     image: eso-lua:5.1
