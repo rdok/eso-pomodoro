@@ -14,6 +14,7 @@ if [ ! -f ${esouiSdkZip} ]; then
     --silent
 fi
 
+
 esouiMaster="/app/lib/esoui-master"
 esouiSdk="/app/lib/esoui-modules"
 if  [ ! -d ${esouiSdk} ]; then
@@ -31,7 +32,8 @@ if  [ ! -d ${esouiSdk} ]; then
 fi
 
 
-clear
+#clear
 
-exec lua "$@" -v
+#exec lua "$@" -v
+exec "$@"
 
