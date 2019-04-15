@@ -1,6 +1,7 @@
 #!/usr/bin/env lua
 
-lu = require 'luaunit'
+testCase = require 'TestCase'
+testCase.requireDependencies()
 
 TestEvent = require 'EventTest'
 TestCommand = require 'CommandTest'

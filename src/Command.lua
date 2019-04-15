@@ -5,4 +5,5 @@ function Command:register()
 end
 
 function Command:call()
+    d('bla bla Usage: pomodoro adfsd')
 end
