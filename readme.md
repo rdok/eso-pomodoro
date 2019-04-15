@@ -3,7 +3,10 @@
 ## Dev
 
 ### Tests
-- [luaunit](https://luaunit.readthedocs.io/en/latest/#)
+> [luaunit](https://luaunit.readthedocs.io/en/latest/#)
+- Acceptance tests: `docker-compose run luaunit tests/AcceptanceTestSuite.lua`
+- Unit tests: `docker-compose run luaunit tests/UnitTestSuite.lua`
+
 
 ### IDE
 - Copy .env.example to .env
