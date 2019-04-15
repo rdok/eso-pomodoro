@@ -6,4 +6,5 @@ before_install:
 
 script:
   - sudo chmod +x docker/entry-point.sh
-  - docker-compose run luaunit -v
+  - docker-compose run luaunit tests/UnitTestSuite.lua -v
+  - docker-compose run luaunit tests/AcceptanceTestSuite.lua -v
