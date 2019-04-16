@@ -1,7 +1,5 @@
 [![Build Status](https://travis-ci.org/rdok/eso-pomodoro.svg?branch=master)](https://travis-ci.org/rdok/eso-pomodoro)
 
-## Dev
-
 ### Tests
 > [busted](http://olivinelabs.com/busted/)
 - Acceptance tests: `docker-compose run luaunit tests/AcceptanceTestSuite.lua`
