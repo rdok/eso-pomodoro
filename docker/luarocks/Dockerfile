@@ -19,4 +19,4 @@ RUN mkdir /luarocks && cd /luarocks \
 # Required by luarocks to install packages
 RUN apk add unzip curl
 
-ENTRYPOINT ["luarocks"]
+ENTRYPOINT ["docker/luarocks/entry-point.sh"]

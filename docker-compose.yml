@@ -14,3 +14,4 @@ services:
     working_dir: /luarocks
     volumes:
       - ./modules:/luarocks/modules
+      - ./docker:/luarocks/docker

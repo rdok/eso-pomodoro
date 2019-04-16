@@ -26,15 +26,11 @@ Storing source inside the system feels like coding on production server :mind_bl
 ### Issues
 > standard_init_linux.go:207: exec user process caused "no such file or directory"
 Convert file endings to Unix style: 
-- Download http://dos2unix.sourceforge.net/
-- Extract to this directory
-- PowerShell:  `.\dos2unix.exe .\docker\install.sh`
 
-Alternative solution / TODO when bug occurs again:
-```
- RUN sed -i 's/\r$//' $app/filename.sh  && \  
-        chmod +x $app/filename.sh
-```
+Powershell:
+- Fetch dos2unix:  .\tools\fetch_tools.ps1
+- PowerShell:  `{dos2unix_path} {sh file path}`
+ - Example: ` .\tools\dos2unix\bin\dos2unix.exe .\docker\luarocks\entry-point.sh`
 
  
 ### Docker
