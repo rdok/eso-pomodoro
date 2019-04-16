@@ -2,7 +2,9 @@ services:
   - docker
 
 before_install:
-  - docker-compose build lua luarocks busted
+  - docker-compose build lua
+  - docker-compose build luarocks
+  - docker-compose build busted
 
 script:
   - docker-compose run --rm busted  tests -v

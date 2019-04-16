@@ -4,7 +4,10 @@
 > Use docker to expose lua services such as lua interpreter, luarocks package manager, and the most popular lua BDD testing framework busted.
 
 - Setup https://docs.docker.com/install/
-- Build the images:  `docker-compose build lua luarocks busted`
+- Build the images:  
+    - `docker-compose build lua`
+    - `docker-compose build luarocks`
+    - `docker-compose build busted`
 - Execute Tests `docker-compose run --rm busted  tests -v`
 
 
