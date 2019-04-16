@@ -7,7 +7,16 @@ describe("Command", function()
         assert.are.same({ ['/pomodoro'] = Command.call }, SLASH_COMMANDS)
     end)
 
-    it("may call the help command", function()
-        assert.same(HelpCommand.new, Command.call("help"))
+    it("should have access to help command without a second command", function()
+        spy.on(HelpCommand, "new")
+        Command.call()
+        assert.spy(HelpCommand.new).was_called()
     end)
+
+    it("should have access to help command when using 'help' as second command", function()
+        spy.on(HelpCommand, "new")
+        Command.call('help')
+        assert.spy(HelpCommand.new).was_called()
+    end)
+
 end)
