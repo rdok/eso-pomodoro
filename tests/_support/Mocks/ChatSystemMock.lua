@@ -3,9 +3,9 @@ CHAT_SYSTEM = {}
 local message = ''
 
 function CHAT_SYSTEM:AddMessage(text)
-    self.message = text
+    CHAT_SYSTEM.message = text
 end
 
 function CHAT_SYSTEM:GetMessage()
-    return self.message
+    return CHAT_SYSTEM.message
 end

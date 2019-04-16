@@ -10,6 +10,8 @@
     - `docker-compose build busted`
 - Execute Tests `docker-compose run --rm busted  tests -v`
 
+### Scripts
+This `scripts` folder has scripts automating tasks such as getting busted, esoui sdks. Tools such as dos2unix, and even fetching esoui globals.
 
 ### Link src to ESO path
 Storing source code inside the system feels like coding on production server :mind_blown: Let's fix that by creating a symbolic link from the source code to system:
