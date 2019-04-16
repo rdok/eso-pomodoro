@@ -1,4 +1,4 @@
-local Listener = {}
+Listener = {}
 
 function Listener:registerEvents(addonName)
     EVENT_MANAGER:RegisterForEvent(addonName, EVENT_ZONE_CHANGED, Listener.dispatch)
@@ -8,5 +8,3 @@ end
 function Listener:dispatch()
     d(os.date("%d.%m.%Y %H:%M:%S"))
 end
-
-return Listener

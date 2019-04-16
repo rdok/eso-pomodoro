@@ -28,12 +28,31 @@ function EsoLuaLoader:initializeGlobals()
     -- and load them here by manually.
     -- If the need is great, I might modify the script that downloads these
     -- to generate a .lua file with them, and load it here
-    EVENT_ZONE_CHANGED = 131246
+    EsoLuaLoader:initializeConstants()
 
     SLASH_COMMANDS = {}
 
     require "EventManagerMock"
     require "ChatSystemMock"
+    require "DMock"
+end
+
+function EsoLuaLoader:initializeConstants()
+    EVENT_ZONE_CHANGED = 131246
+    DT_LOW = 0
+    DL_BACKGROUND = 0
+    DL_CONTROLS = 1
+    DL_COUNT = 4
+    DL_MAX_VALUE = 4
+    DL_MIN_VALUE = 0
+    DL_OVERLAY = 3
+    DL_TEXT = 2
+    DT_HIGH = 2
+    DT_LOW = 0
+    DT_MAX_VALUE = 999
+    DT_MEDIUM = 1
+    DT_MIN_VALUE = 0
+    DT_PARENT = 999
 end
 
 return EsoLuaLoader
