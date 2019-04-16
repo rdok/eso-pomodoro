@@ -1,5 +1,4 @@
 describe("Command", function()
-
     setup(function()
         require 'bootstrap'
     end)
@@ -11,7 +10,6 @@ describe("Command", function()
     it("should add the help page message to the chat system", function()
         spy.on(CHAT_SYSTEM, "AddMessage")
         Command.call("help")
-        --CHAT_SYSTEM.AddMessage("help")
-        assert.spy(CHAT_SYSTEM.AddMessage).was_called_with("help")
+        assert.spy(_G.CHAT_SYSTEM.AddMessage).was_called_with("help")
     end)
 end)

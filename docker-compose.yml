@@ -13,7 +13,7 @@ services:
     image: luarocks:5.1
     working_dir: /luarocks
     volumes:
-      - ./docker/luarocks:/luarocks/modules
+      - ./modules:/luarocks/modules
       - ./docker:/luarocks/docker
 
   busted:
