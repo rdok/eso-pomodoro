@@ -1,7 +1,7 @@
 #!/usr/bin/env lua
 
 testCase = require 'TestCase'
-testCase.requireDependencies()
+testCase.setup()
 
 TestPrintCommandHelp = require 'PrintCommandHelpTest'
 

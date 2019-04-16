@@ -8,3 +8,5 @@ end
 function Event:dispatch()
     d(os.date("%d.%m.%Y %H:%M:%S"))
 end
+
+return Event

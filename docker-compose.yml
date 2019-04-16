@@ -1,11 +1,29 @@
 version: '3'
+
 services:
-  luaunit:
+
+  lua:
     build:
-      context: ./docker
-    image: eso-lua:5.1
+      context: ./docker/lua
+    image: lua:5.1
+
+  luarocks:
+    build:
+      context: ./docker/luarocks
+    image: luarocks:5.1
+    working_dir: /luarocks
+    volumes:
+      - ./docker/luarocks:/luarocks/modules
+      - ./docker:/luarocks/docker
+    depends_on:
+      - lua
+
+  busted:
+    build:
+      context: ./docker/busted
+    image: busted:5.1
     working_dir: /app
     volumes:
       - .:/app
-    environment:
-      - APP_ENV=${APP_ENV}
+    depends_on:
+      - luarocks

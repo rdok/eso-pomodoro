@@ -1,6 +1,6 @@
 function Pomodoro:addOnLoaded(addonName)
     if Pomodoro.name == addonName then
-        Pomodoro:Initialize()
+        Pomodoro:initialize()
     end
 end
 

@@ -1,13 +1,12 @@
 local TestCase = {}
+local esoLuaLoader = require 'EsoLuaLoader'
 
-lu = require 'luaunit'
-
-function TestCase:requireDependencies()
-    require "Event"
+function TestCase:setup()
+    SLASH_COMMANDS = {}
     require "EventManagerMock"
     require "ChatSystemMock"
-    require "Pomodoro"
-    require "Command"
+
+    esoLuaLoader:load()
 end
 
 function TestCase:assertMessageEmittedContains(text)
@@ -15,5 +14,7 @@ function TestCase:assertMessageEmittedContains(text)
     lu.assertEquals(type(actual), 'string')
     lu.assertStrContains(actual, text)
 end
+
+TestCase:setup()
 
 return TestCase

@@ -1,9 +1,10 @@
 [![Build Status](https://travis-ci.org/rdok/eso-pomodoro.svg?branch=master)](https://travis-ci.org/rdok/eso-pomodoro)
 
-## Dev
-
 ### Tests
-- [luaunit](https://luaunit.readthedocs.io/en/latest/#)
+> [busted](http://olivinelabs.com/busted/)
+- Acceptance tests: `docker-compose run luaunit tests/AcceptanceTestSuite.lua`
+- Unit tests: `docker-compose run luaunit tests/UnitTestSuite.lua`
+
 
 ### IDE
 - Copy .env.example to .env
@@ -20,8 +21,15 @@ Storing source inside the system feels like coding on production server :mind_bl
 ### Issues
 > standard_init_linux.go:207: exec user process caused "no such file or directory"
 Convert file endings to Unix style: 
-- Download http://dos2unix.sourceforge.net/
-- Extract to this directory
-- PowerShell:  `.\dos2unix.exe .\docker\install.sh`
+
+Powershell:
+- Fetch dos2unix:  .\tools\get_dos2unix.ps1
+- PowerShell:  `{dos2unix_path} {sh file path}`
+ - Example: ` .\tools\dos2unix\bin\dos2unix.exe .\docker\luarocks\entry-point.sh`
 
  
+### Docker
+> Remove any stopped containers and all unused images.
+docker system prune -a
+  
+

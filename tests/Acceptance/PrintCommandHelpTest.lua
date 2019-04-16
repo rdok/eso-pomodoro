@@ -1,12 +1,14 @@
 local PrintCommandHelpTest = {}
-testCase = require 'TestCase'
 
 function PrintCommandHelpTest:setUp()
-    Pomodoro:Initialize()
+    Pomodoro:initialize()
 end
 
 function PrintCommandHelpTest:test_the_user_may_request_help_for_using_pomodoro()
-    Command:call()
+    command = Pomodoro:command()
+
+    command:call()
+
     testCase:assertMessageEmittedContains('Usage: pomodoro')
 end
 
