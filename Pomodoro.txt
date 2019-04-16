@@ -5,7 +5,8 @@
 ## Author: Rizart Dokollari
 
 src/Listener.lua
-src/Command.lua
+src/Commands/HelpCommand.lua
+src/Commands/Command.lua
 src/Pomodoro.lua
 src/RegisterAddon.lua
 

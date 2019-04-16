@@ -1,13 +1,11 @@
 Command = {}
 
-function Command:setUp()
+function Command:new()
     SLASH_COMMANDS['/pomodoro'] = Command.call
 end
 
 function Command.call(content)
-    CHAT_SYSTEM.AddMessage(content)
-
-    return Command
+    return HelpCommand.new
 end
 
-Command.setUp()
+Command.new()
