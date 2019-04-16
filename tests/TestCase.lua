@@ -1,14 +1,12 @@
 local TestCase = {}
+local esoLuaLoader = require 'EsoLuaLoader'
 
-lu = require 'luaunit'
-
-function TestCase:requireDependencies()
+function TestCase:setup()
     SLASH_COMMANDS = {}
-    require "Event"
     require "EventManagerMock"
     require "ChatSystemMock"
-    require "Pomodoro"
-    require "Command"
+
+    esoLuaLoader:load()
 end
 
 function TestCase:assertMessageEmittedContains(text)
@@ -17,15 +15,6 @@ function TestCase:assertMessageEmittedContains(text)
     lu.assertStrContains(actual, text)
 end
 
--- Handles up to two level deep
-function TestCase:assertItemsExact(table1, table2)
-    for key1, value1 in pairs(table1) do
-        for key2, value2 in pairs(table2) do
-            lu.assertEquals(table1[], 'Failed asserting tables are exact match.')
-        end
-    end
-
-    lu.assertIsTrue(false, 'Failed asserting tables are exact match.')
-end
+TestCase:setup()
 
 return TestCase

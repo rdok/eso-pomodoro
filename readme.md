@@ -2,9 +2,6 @@
 
 ## Dev
 
-### Installing packages
-`docker-compose run luarocks install --tree modules {package}`
-
 ### Tests
 > [busted](http://olivinelabs.com/busted/)
 - Acceptance tests: `docker-compose run luaunit tests/AcceptanceTestSuite.lua`
@@ -28,7 +25,7 @@ Storing source inside the system feels like coding on production server :mind_bl
 Convert file endings to Unix style: 
 
 Powershell:
-- Fetch dos2unix:  .\tools\fetch_tools.ps1
+- Fetch dos2unix:  .\tools\get_dos2unix.ps1
 - PowerShell:  `{dos2unix_path} {sh file path}`
  - Example: ` .\tools\dos2unix\bin\dos2unix.exe .\docker\luarocks\entry-point.sh`
 

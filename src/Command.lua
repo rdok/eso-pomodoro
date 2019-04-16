@@ -5,7 +5,7 @@ function Command:setUp()
 end
 
 function Command:call()
-    d('bla bla Usage: pomodoro adfsd')
+    --d('bla bla Usage: pomodoro adfsd')
 
     return Command
 end

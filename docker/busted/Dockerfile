@@ -1,14 +1,12 @@
-FROM alpine:3.9
+FROM luarocks:5.1
 
-RUN apk add lua5.1-dev
-
-ENV LUA_PATH "/app/lib/?.lua;$LUA_PATH"
-ENV LUA_PATH "/app/lib/esoui-modules/?.lua;$LUA_PATH"
 ENV LUA_PATH "/app/src/?.lua;$LUA_PATH"
+ENV LUA_PATH "/app/tests/_support/?.lua;$LUA_PATH"
+ENV LUA_PATH "/app/tests/_support/Mocks/?.lua;$LUA_PATH"
 ENV LUA_PATH "/app/tests/Unit/?.lua;$LUA_PATH"
 ENV LUA_PATH "/app/tests/Acceptance/?.lua;$LUA_PATH"
-ENV LUA_PATH "/app/tests/mocks/?.lua;$LUA_PATH"
-ENV LUA_PATH "/app/tests/?.lua;$LUA_PATH"
 ENV LUA_PATH "/app/tests/?.lua;$LUA_PATH"
 
-ENTRYPOINT ["lua"]
+RUN luarocks install busted
+
+ENTRYPOINT ["busted"]
