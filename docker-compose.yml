@@ -21,6 +21,5 @@ services:
       context: ./docker/busted
     image: busted:5.1
     working_dir: /app
-    command: clear
     volumes:
       - .:/app
