@@ -13,17 +13,14 @@ services:
     image: luarocks:5.1
     working_dir: /luarocks
     volumes:
-      - ./docker/luarocks:/luarocks/modules
+      - ./modules:/luarocks/modules
       - ./docker:/luarocks/docker
-    depends_on:
-      - lua
 
   busted:
     build:
       context: ./docker/busted
     image: busted:5.1
     working_dir: /app
+    command: clear
     volumes:
       - .:/app
-    depends_on:
-      - luarocks

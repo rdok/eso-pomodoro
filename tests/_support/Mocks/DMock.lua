@@ -1,11 +1,3 @@
-CHAT_SYSTEM = {}
-
-local message = ''
-
-function CHAT_SYSTEM:AddMessage(text)
-    self.message = text
+function d(...)
 end
 
-function CHAT_SYSTEM:GetMessage()
-    return self.message
-end

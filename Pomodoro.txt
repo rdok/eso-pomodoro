@@ -4,8 +4,9 @@
 ## APIVersion: 100026
 ## Author: Rizart Dokollari
 
-src/Event.lua
-src/Command.lua
+src/Listener.lua
+src/Commands/HelpCommand.lua
+src/Commands/Command.lua
 src/Pomodoro.lua
 src/RegisterAddon.lua
 
