@@ -1,6 +1,6 @@
 local EsoLuaLoader = {}
 
-function EsoLuaLoader:load()
+function EsoLuaLoader:requireLuaFiles()
     -- eso loads/requires the lua files internally. Let's replicate this behaviour
     -- to avoid any mismatched require between the tests and src
 
@@ -19,6 +19,21 @@ function EsoLuaLoader:load()
         end
     end
     io.close()
+end
+
+function EsoLuaLoader:initializeGlobals()
+    -- I haven't a way yet to load the sdk with the esoui globals
+    -- The current solution is to download them from
+    -- https://esodata.uesp.net/current/index.html
+    -- and load them here by manually.
+    -- If the need is great, I might modify the script that downloads these
+    -- to generate a .lua file with them, and load it here
+    EVENT_ZONE_CHANGED = 131246
+
+    SLASH_COMMANDS = {}
+
+    require "EventManagerMock"
+    require "ChatSystemMock"
 end
 
 return EsoLuaLoader

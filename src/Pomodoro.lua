@@ -3,7 +3,7 @@ Pomodoro = {}
 Pomodoro.name = "Pomodoro"
 
 function Pomodoro:initialize()
-    Event:initialize(self.name)
+    --Listener:registerEvents(self.name)
 end
 
 function Pomodoro:command()
