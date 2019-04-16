@@ -1,11 +1,16 @@
 version: '3'
+
 services:
+
   lua:
     build:
-      context: ./docker
-    image: eso-lua:5.1
-    working_dir: /app
+      context: ./docker/lua
+    image: lua:5.1
+
+  luarocks:
+    build:
+      context: ./docker/luarocks
+    image: luarocks:5.1
+    working_dir: /luarocks
     volumes:
-      - .:/app
-    environment:
-      - APP_ENV=${APP_ENV}
+      - ./modules:/luarocks/modules

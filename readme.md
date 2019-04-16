@@ -2,8 +2,11 @@
 
 ## Dev
 
+### Installing packages
+`docker-compose run luarocks install --tree modules {package}`
+
 ### Tests
-> [luaunit](https://luaunit.readthedocs.io/en/latest/#)
+> [busted](http://olivinelabs.com/busted/)
 - Acceptance tests: `docker-compose run luaunit tests/AcceptanceTestSuite.lua`
 - Unit tests: `docker-compose run luaunit tests/UnitTestSuite.lua`
 
@@ -27,4 +30,15 @@ Convert file endings to Unix style:
 - Extract to this directory
 - PowerShell:  `.\dos2unix.exe .\docker\install.sh`
 
+Alternative solution / TODO when bug occurs again:
+```
+ RUN sed -i 's/\r$//' $app/filename.sh  && \  
+        chmod +x $app/filename.sh
+```
+
  
+### Docker
+> Remove any stopped containers and all unused images.
+docker system prune -a
+  
+
