@@ -5,7 +5,9 @@ esouiLoader:initializeGlobals()
 esouiLoader:requireLuaFiles()
 
 function TestCase:assertChatWindowContains(value)
-    assert(CHAT_SYSTEM:contains(value), 'Error message')
+    error = string.format("Unable to find '%s' in chat window", value)
+
+    assert(CHAT_SYSTEM:contains(value), error)
 end
 
 return TestCase
