@@ -6,7 +6,7 @@
 
 src/Listener.lua
 src/Commands/HelpCommand.lua
-src/Commands/NewPomodoroCommand.lua
+src/Commands/StartPomodoroCommand.lua
 src/Commands/Command.lua
 src/Pomodoro.lua
 src/RegisterAddon.lua

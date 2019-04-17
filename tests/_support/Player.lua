@@ -2,11 +2,11 @@
 local Player = {}
 
 function Player:callHelpPage()
-    HelpCommand.new()
+    Command.call()
 end
 
-function Player:callNewPomodoro()
-    NewPomodoroCommand.new()
+function Player:callStartPomodoro()
+    Command.call('start')
 end
 
 return Player

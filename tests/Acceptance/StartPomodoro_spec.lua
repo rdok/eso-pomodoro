@@ -8,7 +8,7 @@ describe("Start pomodoro:", function()
         local player = require('Player')
 
         -- When I start a new pomodoro
-        player:callNewPomodoro()
+        player:callStartPomodoro()
 
         -- Then i should see in the chat window message about the new pomodoro
         testCase:assertChatWindowContains('Pomodoro started.')
