@@ -7,7 +7,7 @@ describe("HelpCommand", function()
         ['stopPomodoro'] = '> stop   Stop the current Pomodoro.',
     }
     setup(function()
-        require 'bootstrap'
+        require 'TestCase'
     end)
 
     it("should print the help page to the chat system", function()

@@ -1,6 +1,7 @@
+
 describe("Command", function()
     setup(function()
-        require 'bootstrap'
+        require 'TestCase'
     end)
 
     it("should auto register to the esoui commands", function()

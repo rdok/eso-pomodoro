@@ -1,7 +1,7 @@
 describe("Listener", function()
 
     setup(function()
-        require 'bootstrap'
+        require 'TestCase'
         expected = {
             ["addonName"] = 'AddonName',
             ["callback"] = Listener.dispatch
