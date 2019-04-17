@@ -1,4 +1,6 @@
 describe("HelpCommand", function()
+    require 'TestCase'
+
     local helpMessages = {
         ['usage'] = 'Usage:  pomodoro COMMAND',
         ['description'] = 'A break time reminder for players, based on the pomodoro technique.',
@@ -6,9 +8,6 @@ describe("HelpCommand", function()
         ['startPomodoro'] = '> start   Start a Pomodoro.',
         ['stopPomodoro'] = '> stop   Stop the current Pomodoro.',
     }
-    setup(function()
-        require 'TestCase'
-    end)
 
     it("should print the help page to the chat system", function()
         spy.on(CHAT_SYSTEM, "AddMessage")
