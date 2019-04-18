@@ -39,6 +39,8 @@ end
 
 function EsoLuaLoader:initializeConstants()
     EVENT_ZONE_CHANGED = 131246
+    EVENT_LOOT_UPDATED = 131314
+
     DT_LOW = 0
     DL_BACKGROUND = 0
     DL_CONTROLS = 1

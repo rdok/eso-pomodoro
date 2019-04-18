@@ -12,7 +12,7 @@ Invoke-Expression $installEsoui
 Write-Output "Converting esoui/esoui to modules."
 $convertEsouiToSdk = "docker run --rm " `
          + " --volume ${ScriptDir}:/app "`
-         + " --volume ${ScriptDir}\..\modules\sdk:/sdk "`
+         + " --volume ${ScriptDir}\..\modules\esoui:/sdk "`
          + " --workdir /app " `
          + " kubeless/unzip " `
          + " /bin/sh -c '" `

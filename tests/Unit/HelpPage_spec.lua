@@ -1,5 +1,4 @@
-describe("HelpCommand", function()
-    require 'TestCase'
+describe("HelpPage", function()
 
     local helpMessages = {
         ['usage'] = 'Usage:  pomodoro COMMAND',
@@ -9,9 +8,9 @@ describe("HelpCommand", function()
         ['stopPomodoro'] = '> stop   Stop the current Pomodoro.',
     }
 
-    it("should print the help page to the chat system", function()
+    it("should print the help page to the chat system upon initialization", function()
         spy.on(CHAT_SYSTEM, "AddMessage")
-        HelpCommand.new()
+        HelpPage.new()
         for section, description in pairs(helpMessages) do
             assert.spy(CHAT_SYSTEM.AddMessage).was_called_with(CHAT_SYSTEM, description)
         end
