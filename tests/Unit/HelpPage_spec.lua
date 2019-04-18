@@ -1,4 +1,5 @@
-describe("HelpCommand", function()
+describe("HelpPage", function()
+
     local helpMessages = {
         ['usage'] = 'Usage:  pomodoro COMMAND',
         ['description'] = 'A break time reminder for players, based on the pomodoro technique.',
@@ -6,13 +7,10 @@ describe("HelpCommand", function()
         ['startPomodoro'] = '> start   Start a Pomodoro.',
         ['stopPomodoro'] = '> stop   Stop the current Pomodoro.',
     }
-    setup(function()
-        require 'bootstrap'
-    end)
 
-    it("should print the help page to the chat system", function()
+    it("should print the help page to the chat system upon initialization", function()
         spy.on(CHAT_SYSTEM, "AddMessage")
-        HelpCommand.new()
+        HelpPage.new()
         for section, description in pairs(helpMessages) do
             assert.spy(CHAT_SYSTEM.AddMessage).was_called_with(CHAT_SYSTEM, description)
         end

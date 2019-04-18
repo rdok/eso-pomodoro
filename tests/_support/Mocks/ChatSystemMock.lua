@@ -1,7 +1,22 @@
 -- https://esoapi.uesp.net/100021/data/c/h/a/CHAT_SYSTEM.AddMessage.html
 CHAT_SYSTEM = {}
 
-function CHAT_SYSTEM.AddMessage(text)
+local messages = {}
+
+function CHAT_SYSTEM.AddMessage(self, text)
+    table.insert(messages, text)
+end
+
+function CHAT_SYSTEM:contains(value)
+    -- Custom function for testing purposes
+
+    for key, message in pairs(messages) do
+        if (value == message) then
+            return true;
+        end
+    end
+
+    return false
 end
 
 return CHAT_SYSTEM

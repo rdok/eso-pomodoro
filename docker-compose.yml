@@ -12,15 +12,11 @@ services:
       context: ./docker/luarocks
     image: luarocks:5.1
     working_dir: /luarocks
-    volumes:
-      - ./modules:/luarocks/modules
-      - ./docker:/luarocks/docker
 
   busted:
     build:
       context: ./docker/busted
     image: busted:5.1
     working_dir: /app
-    command: clear
     volumes:
       - .:/app
