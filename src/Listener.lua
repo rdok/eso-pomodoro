@@ -8,4 +8,3 @@ Listener = {
         d(os.date("%d.%m.%Y %H:%M:%S"))
     end
 }
-

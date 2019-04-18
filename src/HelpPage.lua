@@ -1,6 +1,5 @@
 HelpPage = {
-
-    new = function()
+    print = function()
         -- Not using loop due to lua not guarantying any iteration order
         -- TODO: find package offering this functionality when this table becomes
         -- hard to maintain
@@ -11,3 +10,4 @@ HelpPage = {
         CHAT_SYSTEM.AddMessage(CHAT_SYSTEM, '> stop   Stop the current Pomodoro.')
     end
 }
+

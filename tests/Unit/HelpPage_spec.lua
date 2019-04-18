@@ -10,7 +10,7 @@ describe("HelpPage", function()
 
     it("should print the help page to the chat system upon initialization", function()
         spy.on(CHAT_SYSTEM, "AddMessage")
-        HelpPage.new()
+        HelpPage.print()
         for section, description in pairs(helpMessages) do
             assert.spy(CHAT_SYSTEM.AddMessage).was_called_with(CHAT_SYSTEM, description)
         end
