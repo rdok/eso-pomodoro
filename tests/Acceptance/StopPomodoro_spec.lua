@@ -1,6 +1,6 @@
 describe("Stop pomodoro:", function()
 
-    it("a player may stop a pomodoro", function()
+    pending("a player may stop a pomodoro", function()
         -- Given I am acting as a player
         require('Player')
 
