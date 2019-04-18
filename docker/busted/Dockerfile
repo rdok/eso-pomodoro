@@ -8,6 +8,7 @@ RUN luarocks install inspect
 
 ENV LUA_PATH "/app/tests/_support/?.lua;$LUA_PATH"
 ENV LUA_PATH "/app/tests/_support/Mocks/?.lua;$LUA_PATH"
+ENV LUA_PATH "/app/tests/_support/Assertions/?.lua;$LUA_PATH"
 ENV LUA_PATH "/app/tests/Unit/?.lua;$LUA_PATH"
 ENV LUA_PATH "/app/tests/Unit/Commands/?.lua;$LUA_PATH"
 ENV LUA_PATH "/app/tests/Acceptance/?.lua;$LUA_PATH"
