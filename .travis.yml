@@ -8,4 +8,4 @@ before_install:
 
 script:
   - sudo chmod +x docker/busted/entry-point.sh
-  - docker-compose run --rm busted  tests -v
+  - docker-compose run --rm busted -v

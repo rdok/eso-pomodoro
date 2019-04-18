@@ -9,7 +9,7 @@ Command = {
             return Pomodoro.new()
         end
 
-        return HelpPage.new()
+        return HelpPage.print()
     end
 }
 

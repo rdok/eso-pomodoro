@@ -1,12 +1,14 @@
 -- Mock player. That is, the eso engine acting in behalf of the user.
-local Player = {}
+Player = {
+    callHelpPage = function()
+        Command.call()
+    end,
 
-function Player:callHelpPage()
-    Command.call()
-end
+    callStartPomodoro = function()
+        Command.call('start')
+    end,
 
-function Player:callStartPomodoro()
-    Command.call('start')
-end
-
-return Player
+    callStopPomodoro = function()
+        Command.call('start')
+    end,
+}

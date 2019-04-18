@@ -3,7 +3,7 @@ local say = require("say")
 
 -- Consider instance of table a table that has the same functions key names
 local function chat_window_contains(state, arguments)
-    if not type(arguments[1]) == "table" or #arguments ~= 1 then
+    if #arguments ~= 1 or not type(arguments[1]) == "string" then
         return false
     end
 
