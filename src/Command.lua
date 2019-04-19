@@ -1,46 +1,61 @@
 Command = {
     pomodoro = nil,
+
     register = function()
         SLASH_COMMANDS['/pomodoro'] = Command.call
     end,
 
-    call = function(command)
+    onUpdate = function()
+        Command.pomodoro = Pomodoro.ping(Command.pomodoro)
 
-        if ('start' == command) then
-            Command.pomodoro = Pomodoro.new()
-            return
+        EVENT_MANAGER:UnregisterForUpdate(Pomodoro.updateId)
+    end,
+
+    call = function(argument)
+        if ('start' == argument) then
+            return Command.startPomodoro()
         end
 
-        if ('stop' == command) then
-            return Command.stopCommand()
+        if ('stop' == argument) then
+            return Command.stopPomodoro()
         end
 
-        if ('status' == command) then
-            return Command.statusCommand()
+        if ('status' == argument) then
+            return Command.statusPomodoro()
         end
 
         return HelpPage.print()
     end,
 
-    stopCommand = function()
+    stopPomodoro = function()
         local pomodoro = Command.pomodoro
 
-        if (nil ~= pomodoro) then
-            Command.pomodoro = Pomodoro.stop(pomodoro)
+        if (nil == pomodoro) then
+            print_error('No pomodoro is running.')
             return
         end
 
-        print_error('No pomodoro is running.')
+        Command.pomodoro = Pomodoro.stop(pomodoro)
+        EVENT_MANAGER:UnregisterForUpdate(Pomodoro.updateId)
     end,
 
-    statusCommand = function()
-        local pomodoro = Command.pomodoro
+    startPomodoro = function()
+        Command.pomodoro = Pomodoro.new()
 
-        if (nil ~= pomodoro) then
-            return Pomodoro.status(pomodoro)
+        EVENT_MANAGER:RegisterForUpdate(
+                Pomodoro.updateId,
+                Pomodoro.tenSecondsInMilliseconds,
+                Command.onUpdate
+        )
+    end,
+
+    statusPomodoro = function()
+        if (nil == Command.pomodoro) then
+            print_error('No pomodoro is running.')
+            return
         end
 
-        print_error('No pomodoro is running.')
+        Command.pomodoro = Pomodoro.status(Command.pomodoro)
     end,
 }
 

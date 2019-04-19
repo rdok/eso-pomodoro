@@ -5,6 +5,7 @@ describe("HelpPage", function()
         ['helpPomodoro'] = '> help   Display help information.',
         ['startPomodoro'] = '> start   Start a Pomodoro.',
         ['stopPomodoro'] = '> stop   Stop the current Pomodoro.',
+        ['stopPomodoro'] = '> status   Display pomodoro duration.',
     }
 
     it("should print the help page to the chat system upon initialization", function()

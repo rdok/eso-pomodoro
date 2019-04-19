@@ -8,6 +8,7 @@ HelpPage = {
         print_info('> help   Display help information.')
         print_info('> start   Start a Pomodoro.')
         print_info('> stop   Stop the current Pomodoro.')
+        print_info('> status   Display pomodoro duration.')
     end,
 }
 
