@@ -4,6 +4,8 @@
 ## APIVersion: 100026
 ## Author: Rizart Dokollari
 
+src/helpers.lua
+src/TextFormatter.lua
 src/Listener.lua
 src/HelpPage.lua
 src/Command.lua

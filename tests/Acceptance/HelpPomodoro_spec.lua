@@ -6,10 +6,10 @@ describe("Help Page:", function()
         require('Player')
 
         -- When I request the help page
-        Player:callHelpPage()
+        Player:execHelpCommand()
 
         -- Then i should see in the chat window a line from the help page
-        assert.chat_window_contains('Usage:  pomodoro COMMAND')
+        assert.has_chat('Usage:  pomodoro COMMAND')
     end)
 
 end)
