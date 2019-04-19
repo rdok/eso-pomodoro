@@ -25,31 +25,31 @@ TextFormatter = {
     end
 }
 
-function info(text)
+function print_info(text)
     text = TextFormatter.info(text)
-    chat(text)
+    print_chat(text)
 end
 
-function primary(text)
+function print_primary(text)
     text = TextFormatter.primary(text)
-    chat(text)
+    print_chat(text)
 end
 
-function success(text)
+function print_success(text)
     text = TextFormatter.success(text)
-    chat(text)
+    print_chat(text)
 end
 
-function error_chat(text)
+function print_error(text)
     text = TextFormatter.error(text)
-    chat(text)
+    print_chat(text)
 end
 
-function warning(text)
+function print_warning(text)
     text = TextFormatter.warning(text)
-    chat(text)
+    print_chat(text)
 end
 
-function chat(text)
+function print_chat(text)
     CHAT_SYSTEM.AddMessage(CHAT_SYSTEM, text)
 end

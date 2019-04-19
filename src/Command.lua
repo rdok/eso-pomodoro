@@ -1,5 +1,5 @@
 Command = {
-
+    pomodoro = nil,
     register = function()
         SLASH_COMMANDS['/pomodoro'] = Command.call
     end,
@@ -15,19 +15,32 @@ Command = {
             return Command.stopCommand()
         end
 
+        if ('status' == command) then
+            return Command.statusCommand()
+        end
+
         return HelpPage.print()
     end,
 
     stopCommand = function()
         local pomodoro = Command.pomodoro
 
-        if (nil == pomodoro) then
-            error_chat('No pomodoro is running.')
-            return
+        if (nil ~= pomodoro) then
+            return Pomodoro.stop(pomodoro)
         end
 
-        return Command.pomodoro:stop()
-    end
+        print_error('No pomodoro is running.')
+    end,
+
+    statusCommand = function()
+        local pomodoro = Command.pomodoro
+
+        if (nil ~= pomodoro) then
+            return Pomodoro.status(pomodoro)
+        end
+
+        print_error('No pomodoro is running.')
+    end,
 }
 
 Command.register()
