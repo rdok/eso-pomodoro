@@ -1,27 +1,31 @@
 Pomodoro = {
-    duration = 1500, -- Seconds = 25 minutes
+    tenSecondsInMilliseconds = 10000,
+    updateId = 'Pomodoro.onUpdate', -- Seconds = 25 minutes
+    pomodoroDurationInSeconds = 25, -- 25 minutes
+    --pomodoroDurationInSeconds = 1500, -- 25 minutes
     error_already_finished = "Error: Attempting to process finished Pomodoro.\nPlease report this at https://git.io/fjO3p",
 
     new = function()
         print_primary('Pomodoro started.')
-
-        return {
+        pomodoro = {
             createdAt = os.time(),
             completedAt = nil
         }
+
+        return pomodoro
     end,
 
     ping = function(pomodoro)
         if (nil ~= pomodoro.completedAt) then
             print_error(Pomodoro.error_already_finished)
-            return
+            return pomodoro
         end
 
         local time = os.time()
         local currentDuration = time - pomodoro.createdAt
 
-        if (currentDuration < Pomodoro.duration) then
-            return
+        if (currentDuration < Pomodoro.pomodoroDurationInSeconds) then
+            return pomodoro
         end
         pomodoro.completedAt = time
         print_success('Pomodoro finished.')
@@ -48,6 +52,8 @@ Pomodoro = {
         local message = string.format('Pomodoro duration: %sm %ss', minutes, seconds)
 
         print_info(message)
+
+        return pomodoro
     end,
 
     currentDuration = function()

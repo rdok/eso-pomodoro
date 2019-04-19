@@ -61,4 +61,5 @@ describe("Pomodoro", function()
         Pomodoro.status(pomodoro)
         assert.stub(_G.print_info).was.called_with('Pomodoro duration: 08m 59s')
     end)
+
 end)
