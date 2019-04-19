@@ -8,7 +8,12 @@ Player = {
         Command.call('start')
     end,
 
-    execStopCmd = function()
+    execStopCommand = function()
         Command.call('stop')
+    end,
+
+
+    execStatusCommand = function()
+        Command.call('status')
     end,
 }
