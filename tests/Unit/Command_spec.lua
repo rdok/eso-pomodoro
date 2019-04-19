@@ -72,6 +72,16 @@ describe("Command", function()
         assert.spy(EVENT_MANAGER.UnregisterForUpdate).was_called_with(EVENT_MANAGER, Pomodoro.updateId)
     end)
 
+    it("should not deregister if pomodoro hasn't complete", function()
+        spy.on(EVENT_MANAGER, "UnregisterForUpdate")
+        Command.call('start')
+        Command.pomodoro.completedAt = nil
+        Command.onUpdate()
+        assert.spy(EVENT_MANAGER.UnregisterForUpdate).was_not_called(
+
+        )
+    end)
+
     it("should deregister when pomodoro is stopped. #cmd_register", function()
         stub(_G, EVENT_MANAGER)
         Command.call('start')

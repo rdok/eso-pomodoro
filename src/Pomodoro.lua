@@ -1,8 +1,7 @@
 Pomodoro = {
     tenSecondsInMilliseconds = 10000,
-    updateId = 'Pomodoro.onUpdate', -- Seconds = 25 minutes
-    pomodoroDurationInSeconds = 25, -- 25 minutes
-    --pomodoroDurationInSeconds = 1500, -- 25 minutes
+    updateId = 'Pomodoro.onUpdate',
+    pomodoroDurationInSeconds = 1500, -- 25 minutes
     error_already_finished = "Error: Attempting to process finished Pomodoro.\nPlease report this at https://git.io/fjO3p",
 
     new = function()
@@ -55,8 +54,4 @@ Pomodoro = {
 
         return pomodoro
     end,
-
-    currentDuration = function()
-
-    end
 }

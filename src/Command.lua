@@ -8,7 +8,9 @@ Command = {
     onUpdate = function()
         Command.pomodoro = Pomodoro.ping(Command.pomodoro)
 
-        EVENT_MANAGER:UnregisterForUpdate(Pomodoro.updateId)
+        if (nil ~= Command.pomodoro.completedAt) then
+            EVENT_MANAGER:UnregisterForUpdate(Pomodoro.updateId)
+        end
     end,
 
     call = function(argument)
