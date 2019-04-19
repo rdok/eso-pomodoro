@@ -1,5 +1,10 @@
 [![Build Status](https://travis-ci.org/rdok/eso-pomodoro.svg?branch=master)](https://travis-ci.org/rdok/eso-pomodoro)
 
+![Pomodoro Usage](img/pomodoro_usage.jpg "Pomodoro Usage") 
+![Pomodoro Start & Status](img/pomodoro_start_and_status.jpg "Pomodoro Start & Status")
+
+
+
 ### Developer Environment
 > Use docker to expose lua services such as lua interpreter, luarocks package manager, and the most popular lua BDD testing framework busted.
 
