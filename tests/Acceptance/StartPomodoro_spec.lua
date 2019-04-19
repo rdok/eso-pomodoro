@@ -6,10 +6,10 @@ describe("Start pomodoro:", function()
         require('Player')
 
         -- When I start a new pomodoro
-        Player:callStartPomodoro()
+        Player:execStartCommand()
 
         -- Then i should see in the chat window message about the new pomodoro
-        assert.chat_window_contains('Pomodoro started.')
+        assert.has_chat('Pomodoro started.')
     end)
 
 end)

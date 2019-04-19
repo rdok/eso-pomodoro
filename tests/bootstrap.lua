@@ -1,6 +1,6 @@
 require "TimeAssertion"
 require "InstanceAssertion"
-require "ChatWindowAssertion"
+require "ChatAssertion"
 
 local esouiLoader = require 'EsoLuaLoader'
 esouiLoader:initializeGlobals()

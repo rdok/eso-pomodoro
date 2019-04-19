@@ -11,7 +11,7 @@ function CHAT_SYSTEM:contains(value)
     -- Custom function for testing purposes
 
     for key, message in pairs(messages) do
-        if (value == message) then
+        if string.match(message, value) then
             return true;
         end
     end
