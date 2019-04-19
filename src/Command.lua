@@ -26,7 +26,8 @@ Command = {
         local pomodoro = Command.pomodoro
 
         if (nil ~= pomodoro) then
-            return Pomodoro.stop(pomodoro)
+            Command.pomodoro = Pomodoro.stop(pomodoro)
+            return
         end
 
         print_error('No pomodoro is running.')

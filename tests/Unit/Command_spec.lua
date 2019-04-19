@@ -27,6 +27,8 @@ describe("Command", function()
         Command.call('start')
         Command.call('stop')
 
+        assert.is_nil(Command.pomodoro)
+
         assert.spy(Pomodoro.stop).was_called()
         message = TextFormatter.error('No pomodoro is running.')
         assert.spy(CHAT_SYSTEM.AddMessage).was_not_called_with(CHAT_SYSTEM, message)
