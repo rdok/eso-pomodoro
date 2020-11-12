@@ -4,7 +4,7 @@ function EsoLuaLoader:requireLuaFiles()
     -- eso loads/requires the lua files internally. Let's replicate this behaviour
     -- to avoid any mismatched require between the tests and src
 
-    local file = assert(io.open("Pomodoro.txt", "rb"))
+    local file = assert(io.open("src/Pomodoro.txt", "rb"))
     for line in file:lines() do
         local isLua = string.match(line, "^%a")
 
